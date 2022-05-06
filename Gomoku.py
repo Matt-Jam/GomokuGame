@@ -23,8 +23,10 @@ class Gomoku:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
-            #self.show()
-            self.gameDisplay.fill((255,0,255))
+            self.gameDisplay.fill((255,255,255))
+            self.show()
+            pygame.display.flip()
+            
     def show(self):
         for row in range(20):
             for col in range(20):
