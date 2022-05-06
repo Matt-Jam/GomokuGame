@@ -1,5 +1,6 @@
 import pygame
 import sys
+pygame.init()
 class Gomoku:
     def __init__(self):
         #Dimensions of screen
@@ -8,7 +9,7 @@ class Gomoku:
         #radius of circle
         self.circle_radius = ((self.width/20)-2)/2
         #Set up pygame window
-        pygame.init()
+
         self.gameDisplay = pygame.display.set_mode(screensize)
         #board grid: 0 is empty, 1 is player 1, -1 is player 2
         self.grid = [[-1 for col in range(20)] for row in range(20)]
@@ -16,14 +17,14 @@ class Gomoku:
         self.colours = {-1:(0,0,255),1:(255,0,0)}
         self.play()
     def GameOver(self):
-        return True
+        return False
     def play(self):
         while not(self.GameOver()):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
-            self.gameDisplay.fill(255,255,255)
-            self.show()
+            #self.show()
+            self.gameDisplay.fill((255,0,255))
     def show(self):
         for row in range(20):
             for col in range(20):
